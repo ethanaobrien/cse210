@@ -1,24 +1,33 @@
+using System.Text.Json;
+
 public class Journal
 {
-    private List<Entry> _entries;
+    private List<Entry> _entries = [];
 
-    void AddEntry(Entry entry)
+    public void AddEntry(Entry entry)
     {
         _entries.Add(entry);
     }
 
-    void DisplayAll()
+    public void DisplayAll()
     {
-        //todo
+        Console.Clear();
+        foreach (var entry in _entries)
+        {
+            entry.Display();
+            Console.WriteLine();
+        }
     }
 
-    void SaveToFile(String fileName)
+    public void SaveToFile(String fileName)
     {
-        //todo
+        var json = JsonSerializer.Serialize(_entries);
+        File.WriteAllText(fileName, json);
     }
 
-    void LoadFromFile(String fileName)
+    public void LoadFromFile(String fileName)
     {
-        //todo
+        var json = File.ReadAllText(fileName);
+        _entries = JsonSerializer.Deserialize<List<Entry>>(json);
     }
 }

@@ -1,12 +1,13 @@
 
 public class Entry
 {
-    String _date;
-    String _promptText;
-    String _entryText;
+    public string _date { get; init; }
+    public string _promptText { get; init; }
+    public string _entryText { get; init; }
     
-    void Display()
+    public void Display()
     {
-        //todo
+        Console.WriteLine($"Date: {_date} - {_promptText}");
+        Console.WriteLine(_entryText);
     }
 }
