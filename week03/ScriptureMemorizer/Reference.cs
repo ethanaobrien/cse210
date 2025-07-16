@@ -24,6 +24,11 @@ public class Reference
     
     public string GetDisplayText()
     {
-        return "";
+        var text = _book + " " + _chapter + ":" + _verse;
+        if (_endVerse != _verse)
+        {
+            text += "-" + _endVerse;
+        }
+        return text;
     }
 }
