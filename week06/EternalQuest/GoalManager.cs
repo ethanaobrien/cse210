@@ -1,10 +1,4 @@
-/* Author: Ethan O'Brien
- *  Project: Eternal Quest Program
- *
- * Bonus:
- * - Adds a "failed" goal count, if the user wants, on the "checklist goal".
- * - Before marking a goal as completed, it checks if it has already been completed.
- */
+
 public class GoalManager
 {
     private List<Goal> _goals = [];
